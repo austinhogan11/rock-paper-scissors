@@ -1,8 +1,11 @@
 // Create a function to get CPU Choice
-    // Randomly return: rock, paper, or scissors
-    // Create a list containing options
-    // Randomly generate a number 0-2 to select an option from list
-    // Return option
+function getCpuChoice() {
+    const options = ["rock", "paper", "scissors"];
+    let randomNum = Math.floor(Math.random() * 3);
+    let choice = options[randomNum]
+    return choice
+}
+
 
 // Create a function to play a single round of RPS.
     // Take in two parameters *Selections should be case-INsensitive*
