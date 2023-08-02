@@ -1,1 +1,1 @@
-paper
+   // let choice = options[Math.floor(Math.random() * 3)]

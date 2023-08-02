@@ -1,9 +1,8 @@
 // Create a function to get CPU Choice
 function getCpuChoice() {
     const options = ["rock", "paper", "scissors"];
-    let randomNum = Math.floor(Math.random() * 3);
-    let choice = options[randomNum]
-    return choice
+    let choice = options[Math.floor(Math.random() * 3)];
+    return choice;
 }
 
 function getPlayerChoice() {
@@ -15,6 +14,7 @@ function playRpsRound(playerChoice, cpuChoice) {
     console.log(`Player: ${playerChoice} CPU ${cpuChoice}`);
     if (playerChoice === cpuChoice) {
         console.log("It's a draw!");
+        return 0;
     } else if ((playerChoice === "rock" && cpuChoice === "scissors") || (playerChoice === "paper" && cpuChoice === "rock") || (playerChoice === "scissors" && cpuChoice === "paper"))
     {
         console.log("Player Wins!")
