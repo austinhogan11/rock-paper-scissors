@@ -6,16 +6,49 @@ function getCpuChoice() {
     return choice
 }
 
+function getPlayerChoice() {
+    let playerChoice = prompt("Enter your selection: Rock, Paper, or Scissors").toLowerCase();
+    return playerChoice;
+}
 
-// Create a function to play a single round of RPS.
-    // Take in two parameters *Selections should be case-INsensitive*
-        // PlayerSelection
-        // CPU Selection
-    // Prompt user for input
+function playRpsRound(playerChoice, cpuChoice) {
+    console.log(`Player: ${playerChoice} CPU ${cpuChoice}`);
+    if (playerChoice === cpuChoice) {
+        console.log("It's a draw!");
+    } else if ((playerChoice === "rock" && cpuChoice === "scissors") || (playerChoice === "paper" && cpuChoice === "rock") || (playerChoice === "scissors" && cpuChoice === "paper"))
+    {
+        console.log("Player Wins!")
+        return 1;
+    } else {
+        console.log("CPU Wins");
+        return -1;
+    }
+}
 
-    // Determin winner
+function determineWinner(userScore, cpuScore) {
+    if (userScore === cpuScore) {
+        alert(`DRAW! Player: ${userScore} CPU: ${cpuScore}`);
+    } else if (userScore > cpuScore) {
+        alert(`PLAYER WINS! Player: ${userScore} CPU: ${cpuScore}`);
+    }
+    alert(`CPU WINS! Player: ${userScore} CPU: ${cpuScore}`);
+}
 
-    // Return a Result String
+function game() {
+    let userScore = 0;
+    let cpuScore = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        console.log(`Score: Player: ${userScore} CPU: ${cpuScore}`)
+        let result = playRpsRound(getPlayerChoice(), getCpuChoice());
+        if (result === 1) {
+            userScore++;
+        } else if (result === -1) {
+            cpuScore++;
+        }
+    }
 
-// Create a game() function to create a 5 round RPS game
-    // Function should keep schore & report the winner & loser at the end.
+    determineWinner(userScore, cpuScore);
+}
+
+game();
