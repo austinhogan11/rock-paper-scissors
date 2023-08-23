@@ -34,21 +34,37 @@ function determineWinner(userScore, cpuScore) {
     alert(`CPU WINS! Player: ${userScore} CPU: ${cpuScore}`);
 }
 
-function game() {
-    let userScore = 0;
-    let cpuScore = 0;
-    
-    for (let i = 0; i < 5; i++) {
-        console.log(`Score: Player: ${userScore} CPU: ${cpuScore}`)
-        let result = playRpsRound(getPlayerChoice(), getCpuChoice());
-        if (result === 1) {
-            userScore++;
-        } else if (result === -1) {
-            cpuScore++;
-        }
-    }
-
-    determineWinner(userScore, cpuScore);
+function printScore(userScore, cpuScore) {
+    console.log(`User: ${userScore} CPU: ${cpuScore}`);
 }
 
-game();
+function game() {
+
+    const rockBtn = document.querySelector("#rock");
+    const paperBtn = document.querySelector("#paper");
+    const sciBtn = document.querySelector("#scissors");
+
+    let result;
+
+    rockBtn.addEventListener('click', () => {
+        return playRpsRound("rock", getCpuChoice());
+    });
+    paperBtn.addEventListener('click', () => {
+        return playRpsRound("paper", getCpuChoice());
+    });
+    sciBtn.addEventListener('click', () => {
+        return playRpsRound("scissors", getCpuChoice());
+    });
+}
+
+let userScore = 0;
+let cpuScore = 0;
+let result = game();
+if (result === 1) {
+    userScore++;
+    printScore(userScore, cpuScore);
+} else if (result === -1) {
+    cpuScore++;
+    printScore(userScore, cpuScore);
+}
+
