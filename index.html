@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <script src="rps.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <h1 id="header-text">Let's Play Rock Paper Scissors!</h1>
+    <div id="display">
+        <div>
+            <h2 id="player-choice-display">Player:</h2>
+            <h2 id="cpu-choice-display">CPU:</h2>
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+
+        <div id="scoreboard">
+            <h2>Scoreboard</h2>
+            <h3 id="player-score">Player: 0</h3>
+            <h3 id="cpu-score">CPU: 0</h3>
+        </div>
+    </div>
     
 </body>
 </html>

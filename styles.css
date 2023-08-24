@@ -1,0 +1,9 @@
+#header-text {
+    display: flex;
+    justify-content: center;
+}
+#display {
+    display: flex;
+    justify-content: space-around;
+
+}
